@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Écurie du Frêne — Écurie dynamique à Boitron (77750)</title>
-<meta name="description" content="L'Écurie du Frêne ouvre ses portes mi-septembre 2026 à Boitron (Seine-et-Marne). Écurie dynamique : vie en troupeau, foin à volonté, mouvement libre. 15 chevaux, 4,5 hectares.">
+<title>Écurie du Frêne d'Ana — Écurie dynamique à Boitron (77750)</title>
+<meta name="description" content="L'Écurie du Frêne d'Ana ouvre ses portes mi-septembre 2026 à Boitron (Seine-et-Marne). Écurie dynamique : vie en troupeau, foin à volonté, mouvement libre. 15 chevaux, 4,5 hectares.">
 <link rel="icon" href="data:,">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -232,6 +232,45 @@ body { font-family: 'Karla', sans-serif; color: #313C72; }
 a { color: #25986A; }
 a:hover { color: #313C72; }
 html { scroll-behavior: smooth; }
+
+.nav-toggle { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: #313C72; border-radius: 2px; }
+
+.site-nav { display: flex; gap: 22px; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+.hero-logo-wrap { display: flex; justify-content: center; }
+.stack-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.ana-grid { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center; }
+.loc-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center; }
+.section-pad { padding: 80px 5vw; }
+.section-pad-top0 { padding: 0 5vw 80px; }
+
+@media (max-width: 760px) {
+  .nav-toggle { display: flex; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    background: #FAF8F5;
+    border-bottom: 1px solid #E8E2DA;
+    padding: 8px 5vw 20px;
+    box-shadow: 0 12px 20px rgba(49, 60, 114, 0.08);
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a { padding: 12px 4px; }
+
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero-logo-wrap { display: none; }
+  .stack-grid, .ana-grid, .loc-grid { grid-template-columns: 1fr; }
+  .ana-grid { justify-items: center; text-align: center; }
+  .section-pad { padding: 56px 5vw; }
+  .section-pad-top0 { padding: 0 5vw 56px; }
+}
 </style>
 
 </head>
@@ -242,26 +281,29 @@ html { scroll-behavior: smooth; }
 
   <div style="background: #313C72; color: #FBE9E7; text-align: center; padding: 10px 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.06em;">Écurie dynamique en construction — ouverture prévue mi-septembre 2026</div>
 
-  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 5vw; background: #FAF8F5; border-bottom: 1px solid #E8E2DA; position: sticky; top: 0; z-index: 50; flex-wrap: wrap;">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 5vw; background: #FAF8F5; border-bottom: 1px solid #E8E2DA; position: sticky; top: 0; z-index: 50;">
     <a href="#haut" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #313C72;">
-      <img src="assets/images/logo-ecurie-du-frene.png" alt="Logo Écurie du Frêne" style="height: 48px; width: auto;">
-      <span style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 16px; letter-spacing: 0.04em;">ÉCURIE DU FRÊNE</span>
+      <img src="assets/images/logo-ecurie-du-frene.svg" alt="Logo Écurie du Frêne d'Ana" style="height: 48px; width: auto;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 16px; letter-spacing: 0.04em;">ÉCURIE DU FRÊNE D'ANA</span>
     </a>
-    <div style="display: flex; gap: 22px; align-items: center; flex-wrap: wrap; font-size: 14px; font-weight: 500;">
+    <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav-links" class="site-nav" style="font-size: 14px; font-weight: 500;">
       <a href="#concept" style="text-decoration: none; color: #313C72;" data-hover="color: #25986A;">Le concept</a>
       <a href="#travaux" style="text-decoration: none; color: #313C72;" data-hover="color: #25986A;">Les travaux</a>
       <a href="#installations" style="text-decoration: none; color: #313C72;" data-hover="color: #25986A;">Installations</a>
       <a href="#tarifs" style="text-decoration: none; color: #313C72;" data-hover="color: #25986A;">Formules</a>
       <a href="#localisation" style="text-decoration: none; color: #313C72;" data-hover="color: #25986A;">Nous trouver</a>
       <a href="#contact" style="text-decoration: none; background: #25986A; color: #FAF8F5; padding: 10px 20px; border-radius: 999px; font-weight: 700;" data-hover="background: #313C72;">Contact</a>
-    </div>
+    </nav>
   </div>
 
-  <div id="haut" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding: 72px 5vw 80px; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
+  <div id="haut" class="hero-grid" style="padding: 72px 5vw 80px; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
     <div style="display: flex; flex-direction: column; gap: 22px;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #25986A; font-weight: 700;">BOITRON · SEINE-ET-MARNE (77750)</div>
-      <h1 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(32px, 4.5vw, 52px); line-height: 1.12; margin: 0; letter-spacing: -0.01em;">Une écurie dynamique pour des chevaux au naturel</h1>
-      <p style="font-size: 18px; margin: 0; max-width: 52ch; text-wrap: pretty;">L'Écurie du Frêne ouvre ses portes mi-septembre 2026 à Boitron. Vie en troupeau, foin à volonté et mouvement libre : une écurie dynamique (sur le principe de l'écurie active, sans distributeurs automatiques), pensée pour le bien-être physique et mental de votre cheval.</p>
+      <h1 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(32px, 4.5vw, 52px); line-height: 1.12; margin: 0; letter-spacing: -0.01em;">L'Écurie du Frêne d'Ana devient une écurie dynamique</h1>
+      <p style="font-size: 18px; margin: 0; max-width: 52ch; text-wrap: pretty;">L'Écurie du Frêne d'Ana ouvre ses portes mi-septembre 2026 à Boitron. Vie en troupeau, foin à volonté et mouvement libre : une écurie dynamique (sur le principe de l'écurie active, sans distributeurs automatiques), pensée pour le bien-être physique et mental de votre cheval.</p>
       <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
         <a href="#concept" style="text-decoration: none; background: #313C72; color: #FAF8F5; padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 15px;" data-hover="background: #25986A;">Découvrir le concept</a>
         <a href="#contact" style="text-decoration: none; border: 2px solid #313C72; color: #313C72; padding: 12px 26px; border-radius: 999px; font-weight: 700; font-size: 15px;" data-hover="background: #313C72; color: #FAF8F5;">Me contacter</a>
@@ -282,12 +324,12 @@ html { scroll-behavior: smooth; }
         </div>
       </div>
     </div>
-    <div style="display: flex; justify-content: center;">
-      <img src="assets/images/logo-ecurie-du-frene.png" alt="Écurie du Frêne — Boitron 77750" style="width: 100%; max-width: 380px; height: auto;">
+    <div class="hero-logo-wrap">
+      <img src="assets/images/logo-ecurie-du-frene.svg" alt="Écurie du Frêne d'Ana — Boitron 77750" style="width: 100%; max-width: 380px; height: auto;">
     </div>
   </div>
 
-  <div id="concept" style="background: #313C72; color: #FAF8F5; padding: 80px 5vw;">
+  <div id="concept" class="section-pad" style="background: #313C72; color: #FAF8F5;">
     <div style="max-width: 1200px; margin: 0 auto;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #7BC9A4; font-weight: 700;">LE CONCEPT</div>
       <h2 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(26px, 3vw, 36px); margin: 12px 0 16px;">Qu'est-ce qu'une écurie dynamique ?</h2>
@@ -310,11 +352,11 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 
-  <div id="travaux" style="padding: 80px 5vw; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
+  <div id="travaux" class="section-pad" style="max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
     <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #25986A; font-weight: 700;">AVANCEMENT</div>
     <h2 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(26px, 3vw, 36px); margin: 12px 0 10px;">Les travaux sont en cours</h2>
-    <p style="max-width: 62ch; margin: 0 0 16px; font-size: 17px; text-wrap: pretty;">Le chantier avance ! Voici le calendrier prévisionnel jusqu'à l'ouverture. Suivez-nous sur Instagram pour les photos au fil des semaines.</p>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; margin-bottom: 36px;">
+    <p style="max-width: 62ch; margin: 0 0 16px; font-size: 17px; text-wrap: pretty;">Le chantier avance ! Voici le calendrier prévisionnel jusqu'à l'ouverture.</p>
+    <div class="stack-grid" style="gap: 32px; align-items: start; margin-bottom: 36px;">
       <div style="border: 1px solid #E8E2DA; border-radius: 16px; overflow: hidden; background: #FFFFFF;">
         <img src="assets/images/plan-ecurie.jpg" loading="lazy" alt="Plan de l'écurie dynamique : piste, abris, dortoir, stations de fourrage, abreuvoirs isothermes, aire de roulade, paddocks d'intégration" style="display: block; width: 100%; height: auto;">
       </div>
@@ -331,33 +373,39 @@ html { scroll-behavior: smooth; }
     <div style="max-width: 720px; margin-bottom: 40px;">
       <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 13px; margin-bottom: 8px;">
         <span style="font-weight: 700;">Progression du chantier</span>
-        <span style="color: #25986A; font-weight: 700;">35 %</span>
+        <span id="progress-pct" style="color: #25986A; font-weight: 700;">22 %</span>
       </div>
       <div style="height: 12px; background: #E8E2DA; border-radius: 999px; overflow: hidden;">
-        <div style="height: 100%; background: #25986A; border-radius: 999px; width: 35%; transition: width 0.6s ease;"></div>
+        <div id="progress-fill" data-start="2026-07-01" data-end="2026-09-15" style="height: 100%; background: #25986A; border-radius: 999px; width: 22%; transition: width 0.6s ease;"></div>
       </div>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px;">
-              <div style="border: 1px solid #E8E2DA; border-radius: 16px; padding: 24px; background: #EDF6F1; display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #25986A;">✓ TERMINÉ</div>
+              <div class="phase-card" data-date="2026-07-01" style="border: 1px solid #E8E2DA; border-radius: 16px; padding: 24px; background: #EDF6F1; display: flex; flex-direction: column; gap: 8px;">
+          <div class="phase-badge" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #25986A;">✓ TERMINÉ</div>
+          <div style="font-weight: 700; font-size: 17px;">Plans & signature</div>
+          <div style="font-size: 14px; color: #5A5F87;">Plans de l'écurie, choix des matériaux avec l'entrepreneur et signature à la banque.</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #25986A; font-weight: 700; margin-top: auto;">Début juillet 2026</div>
+        </div>
+        <div class="phase-card" data-date="2026-07-31" style="border: 1px solid #E8E2DA; border-radius: 16px; padding: 24px; background: #FFFFFF; display: flex; flex-direction: column; gap: 8px;">
+          <div class="phase-badge" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #313C72;">EN COURS</div>
           <div style="font-weight: 700; font-size: 17px;">Terrassement & pistes</div>
           <div style="font-size: 14px; color: #5A5F87;">Préparation du terrain et tracé des pistes de circulation.</div>
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #25986A; font-weight: 700; margin-top: auto;">Fin juillet 2026</div>
         </div>
-        <div style="border: 1px solid #E8E2DA; border-radius: 16px; padding: 24px; background: #FFFFFF; display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #313C72;">EN COURS</div>
+        <div class="phase-card" data-date="2026-08-05" style="border: 1px solid #E8E2DA; border-radius: 16px; padding: 24px; background: #FAF8F5; display: flex; flex-direction: column; gap: 8px;">
+          <div class="phase-badge" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #9A96B5;">À VENIR</div>
           <div style="font-weight: 700; font-size: 17px;">Abris & stabilisation</div>
           <div style="font-size: 14px; color: #5A5F87;">Construction des abris et stabilisation des zones de vie.</div>
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #25986A; font-weight: 700; margin-top: auto;">Début août 2026</div>
         </div>
-        <div style="border: 1px solid #E8E2DA; border-radius: 16px; padding: 24px; background: #FAF8F5; display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #9A96B5;">À VENIR</div>
+        <div class="phase-card" data-date="2026-08-31" style="border: 1px solid #E8E2DA; border-radius: 16px; padding: 24px; background: #FAF8F5; display: flex; flex-direction: column; gap: 8px;">
+          <div class="phase-badge" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #9A96B5;">À VENIR</div>
           <div style="font-weight: 700; font-size: 17px;">Stations foin & eau</div>
           <div style="font-size: 14px; color: #5A5F87;">Installation des râteliers, points d'eau et clôtures.</div>
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #25986A; font-weight: 700; margin-top: auto;">Fin août 2026</div>
         </div>
-        <div style="border: 1px solid #E8E2DA; border-radius: 16px; padding: 24px; background: #FAF8F5; display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #9A96B5;">À VENIR</div>
+        <div class="phase-card" data-date="2026-09-15" style="border: 1px solid #E8E2DA; border-radius: 16px; padding: 24px; background: #FAF8F5; display: flex; flex-direction: column; gap: 8px;">
+          <div class="phase-badge" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: #9A96B5;">À VENIR</div>
           <div style="font-weight: 700; font-size: 17px;">Ouverture</div>
           <div style="font-size: 14px; color: #5A5F87;">Arrivée des premiers pensionnaires en écurie dynamique.</div>
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #25986A; font-weight: 700; margin-top: auto;">Mi-septembre 2026</div>
@@ -365,7 +413,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 
-  <div style="padding: 0 5vw 80px; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
+  <div class="section-pad-top0" style="max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
     <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #25986A; font-weight: 700;">LE SITE</div>
     <h2 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(26px, 3vw, 36px); margin: 12px 0 10px;">Le projet en images</h2>
     <p style="max-width: 62ch; margin: 0 0 28px; font-size: 15px; color: #5A5F87;">Visuels générés par IA du résultat prévu — les photos réelles du chantier arriveront au fil des travaux.</p>
@@ -397,7 +445,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 
-  <div id="installations" style="background: #FFFFFF; border-top: 1px solid #E8E2DA; padding: 80px 5vw;">
+  <div id="installations" class="section-pad" style="background: #FFFFFF; border-top: 1px solid #E8E2DA;">
     <div style="max-width: 1200px; margin: 0 auto;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #25986A; font-weight: 700;">LES INSTALLATIONS</div>
       <h2 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(26px, 3vw, 36px); margin: 12px 0 10px;">Des installations pensées pour le travail et le confort</h2>
@@ -469,7 +517,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 
-  <div id="tarifs" style="background: #FBE9E7; padding: 80px 5vw;">
+  <div id="tarifs" class="section-pad" style="background: #FBE9E7;">
     <div style="max-width: 1200px; margin: 0 auto;">
       <div style="text-align: center;">
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #25986A; font-weight: 700;">FORMULES &amp; TARIFS</div>
@@ -478,7 +526,7 @@ html { scroll-behavior: smooth; }
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: stretch;">
         <div style="background: #FFFFFF; border: 1px solid #E8E2DA; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 18px;">Pension de base</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 18px;">Pension Nature</div>
           <div style="display: flex; align-items: baseline; gap: 6px;">
             <span style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 40px; color: #25986A;">475 €</span>
             <span style="font-size: 14px; color: #5A5F87;">/ mois</span>
@@ -497,7 +545,7 @@ html { scroll-behavior: smooth; }
             <span style="font-size: 14px; color: #B9B4D6;">/ mois</span>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
-            <div style="display: flex; gap: 10px;"><span style="color: #7BC9A4; font-weight: 700;">✓</span><span>Tout de la pension de base</span></div>
+            <div style="display: flex; gap: 10px;"><span style="color: #7BC9A4; font-weight: 700;">✓</span><span>Tout de la pension Nature</span></div>
             <div style="display: flex; gap: 10px;"><span style="color: #7BC9A4; font-weight: 700;">✓</span><span>1 repas par jour : CoolFibre ou CompletFibre (Horse King)</span></div>
             <div style="display: flex; gap: 10px;"><span style="color: #7BC9A4; font-weight: 700;">✓</span><span>Distribution des compléments incluse</span></div>
           </div>
@@ -509,7 +557,7 @@ html { scroll-behavior: smooth; }
             <span style="font-size: 14px; color: #5A5F87;">/ mois</span>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
-            <div style="display: flex; gap: 10px;"><span style="color: #25986A; font-weight: 700;">✓</span><span>Tout de la pension de base</span></div>
+            <div style="display: flex; gap: 10px;"><span style="color: #25986A; font-weight: 700;">✓</span><span>Tout de la pension Nature</span></div>
             <div style="display: flex; gap: 10px;"><span style="color: #25986A; font-weight: 700;">✓</span><span>Alimentation plus riche, enrichie en oméga 3 (Horse King)</span></div>
             <div style="display: flex; gap: 10px;"><span style="color: #25986A; font-weight: 700;">✓</span><span>Distribution des compléments incluse</span></div>
           </div>
@@ -528,19 +576,19 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 
-  <div id="ana" style="padding: 80px 5vw; max-width: 1000px; margin: 0 auto; box-sizing: border-box; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center;">
-    <div style="width: 220px; height: 220px;">
-      <div style="width: 100%; height: 100%; border-radius: 50%; background: #FBE9E7; border: 2px dashed #B9B4D6; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #5A5F87; text-align: center; padding: 20px; box-sizing: border-box;">Portrait d'Emma<br>à venir</div>
+  <div id="ana" class="ana-grid section-pad" style="max-width: 1000px; margin: 0 auto; box-sizing: border-box;">
+    <div style="width: 220px; height: 220px; max-width: 100%; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 2px solid #E8E2DA;">
+      <img src="assets/images/emma-portrait.jpg" loading="lazy" alt="Emma, fondatrice de l'Écurie du Frêne d'Ana, à cheval" style="width: 100%; height: 100%; object-fit: cover; display: block;">
     </div>
     <div>
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #25986A; font-weight: 700;">QUI SUIS-JE ?</div>
-      <h2 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(24px, 2.6vw, 32px); margin: 12px 0 14px;">Emma, fondatrice de l'Écurie du Frêne</h2>
+      <h2 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(24px, 2.6vw, 32px); margin: 12px 0 14px;">Emma, fondatrice de l'Écurie du Frêne d'Ana</h2>
       <p style="margin: 0; font-size: 16px; max-width: 60ch; text-wrap: pretty;">Passionnée de chevaux et convaincue qu'ils méritent un mode de vie plus proche de leurs besoins, je construis à Boitron, avec ma jument Ana, une écurie dynamique où chaque cheval vit dehors, en troupeau, avec du fourrage en continu. Mon objectif : des chevaux sereins, en bonne santé, et des propriétaires tranquilles.</p>
     </div>
   </div>
 
-  <div id="localisation" style="background: #FFFFFF; border-top: 1px solid #E8E2DA; border-bottom: 1px solid #E8E2DA; padding: 80px 5vw;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center;">
+  <div id="localisation" class="section-pad" style="background: #FFFFFF; border-top: 1px solid #E8E2DA; border-bottom: 1px solid #E8E2DA;">
+    <div class="loc-grid" style="max-width: 1200px; margin: 0 auto;">
       <div>
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #25986A; font-weight: 700;">NOUS TROUVER</div>
         <h2 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(26px, 3vw, 36px); margin: 12px 0 16px;">À Boitron, au cœur de la vallée du Petit Morin</h2>
@@ -557,30 +605,26 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 
-  <div id="contact" style="background: #313C72; color: #FAF8F5; padding: 80px 5vw;">
+  <div id="contact" class="section-pad" style="background: #313C72; color: #FAF8F5;">
     <div style="max-width: 900px; margin: 0 auto; text-align: center;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #7BC9A4; font-weight: 700;">CONTACT</div>
       <h2 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(26px, 3vw, 36px); margin: 12px 0 16px;">Parlons de votre cheval</h2>
-      <p style="max-width: 56ch; margin: 0 auto 36px; font-size: 17px; color: #E3E0EF; text-wrap: pretty;">Une question sur le concept, une visite du chantier, une future place en pension ? Contactez-moi par téléphone, email ou Instagram.</p>
+      <p style="max-width: 56ch; margin: 0 auto 36px; font-size: 17px; color: #E3E0EF; text-wrap: pretty;">Une question sur le concept, une visite du chantier, une future place en pension ? Contactez-moi par téléphone ou email.</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: center;">
         <a href="tel:+33682734125" style="text-decoration: none; background: rgba(250, 248, 245, 0.06); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 26px 20px; color: #FAF8F5; display: flex; flex-direction: column; gap: 6px;" data-hover="border-color: #7BC9A4;">
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #7BC9A4; font-weight: 700;">TÉLÉPHONE</span>
           <span style="font-weight: 700; font-size: 17px;">06 82 73 41 25</span>
         </a>
-        <a href="mailto:contact@ecuriedufrene.fr" style="text-decoration: none; background: rgba(250, 248, 245, 0.06); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 26px 20px; color: #FAF8F5; display: flex; flex-direction: column; gap: 6px;" data-hover="border-color: #7BC9A4;">
+        <a href="mailto:emma.romeo@ecuriedufrenedana.fr" style="text-decoration: none; background: rgba(250, 248, 245, 0.06); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 26px 20px; color: #FAF8F5; display: flex; flex-direction: column; gap: 6px;" data-hover="border-color: #7BC9A4;">
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #7BC9A4; font-weight: 700;">EMAIL</span>
-          <span style="font-weight: 700; font-size: 17px;">contact@ecuriedufrene.fr</span>
-        </a>
-        <a href="https://instagram.com/ecuriedufrene" target="_blank" rel="noopener" style="text-decoration: none; background: rgba(250, 248, 245, 0.06); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 26px 20px; color: #FAF8F5; display: flex; flex-direction: column; gap: 6px;" data-hover="border-color: #7BC9A4;">
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #7BC9A4; font-weight: 700;">INSTAGRAM</span>
-          <span style="font-weight: 700; font-size: 17px;">@ecuriedufrene</span>
+          <span style="font-weight: 700; font-size: 17px; overflow-wrap: anywhere; word-break: break-word;">emma.romeo@ecuriedufrenedana.fr</span>
         </a>
       </div>
     </div>
   </div>
 
   <div style="padding: 28px 5vw; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: #5A5F87;">
-    <span style="font-family: 'JetBrains Mono', monospace;">© 2026 Écurie du Frêne — Boitron 77750</span>
+    <span style="font-family: 'JetBrains Mono', monospace;">© 2026 Écurie du Frêne d'Ana — Boitron 77750</span>
     <span style="font-family: 'JetBrains Mono', monospace; color: #25986A;">Friends — Forage — Freedom</span>
   </div>
 </div>
@@ -610,6 +654,60 @@ html { scroll-behavior: smooth; }
       Object.keys(original).forEach(function (prop) { el.style[prop] = original[prop]; });
     });
   });
+
+  var navToggle = document.querySelector('.nav-toggle');
+  var siteNav = document.getElementById('site-nav-links');
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = siteNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    siteNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        siteNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  var phaseCards = Array.prototype.slice.call(document.querySelectorAll('.phase-card'));
+  var progressFill = document.getElementById('progress-fill');
+  var progressPct = document.getElementById('progress-pct');
+  if (phaseCards.length && progressFill && progressPct) {
+    var today = new Date();
+    var STATUS = {
+      done: { label: '✓ TERMINÉ', color: '#25986A', background: '#EDF6F1' },
+      current: { label: 'EN COURS', color: '#313C72', background: '#FFFFFF' },
+      upcoming: { label: 'À VENIR', color: '#9A96B5', background: '#FAF8F5' }
+    };
+    var currentFound = false;
+    phaseCards.forEach(function (card) {
+      var date = new Date(card.getAttribute('data-date') + 'T00:00:00');
+      var status;
+      if (today >= date) {
+        status = STATUS.done;
+      } else if (!currentFound) {
+        status = STATUS.current;
+        currentFound = true;
+      } else {
+        status = STATUS.upcoming;
+      }
+      card.style.background = status.background;
+      var badge = card.querySelector('.phase-badge');
+      if (badge) {
+        badge.textContent = status.label;
+        badge.style.color = status.color;
+      }
+    });
+
+    var start = new Date(progressFill.getAttribute('data-start') + 'T00:00:00');
+    var end = new Date(progressFill.getAttribute('data-end') + 'T00:00:00');
+    var ratio = (today - start) / (end - start);
+    ratio = Math.max(0, Math.min(1, ratio));
+    var pct = Math.round(ratio * 100);
+    progressFill.style.width = pct + '%';
+    progressPct.textContent = pct + ' %';
+  }
 })();
 </script>
 
