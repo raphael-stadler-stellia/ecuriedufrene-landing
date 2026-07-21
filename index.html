@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18336910415"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18336910415');
+</script>
+<!-- Event snippet for Contact (1) conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18336910415/ybvVCIjr7NMcEM-Y3KdE',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Écurie du Frêne d'Ana — Écurie dynamique à Boitron (77750)</title>
@@ -295,7 +319,7 @@ html { scroll-behavior: smooth; }
       <a href="#installations" style="text-decoration: none; color: #313C72;" data-hover="color: #25986A;">Installations</a>
       <a href="#tarifs" style="text-decoration: none; color: #313C72;" data-hover="color: #25986A;">Formules</a>
       <a href="#localisation" style="text-decoration: none; color: #313C72;" data-hover="color: #25986A;">Nous trouver</a>
-      <a href="#contact" style="text-decoration: none; background: #25986A; color: #FAF8F5; padding: 10px 20px; border-radius: 999px; font-weight: 700;" data-hover="background: #313C72;">Contact</a>
+      <a href="#contact" onclick="gtag_report_conversion(); return true;" style="text-decoration: none; background: #25986A; color: #FAF8F5; padding: 10px 20px; border-radius: 999px; font-weight: 700;" data-hover="background: #313C72;">Contact</a>
     </nav>
   </div>
 
@@ -306,7 +330,7 @@ html { scroll-behavior: smooth; }
       <p style="font-size: 18px; margin: 0; max-width: 52ch; text-wrap: pretty;">L'Écurie du Frêne d'Ana ouvre ses portes mi-septembre 2026 à Boitron. Vie en troupeau, foin à volonté et mouvement libre : une écurie dynamique (sur le principe de l'écurie active, sans distributeurs automatiques), pensée pour le bien-être physique et mental de votre cheval.</p>
       <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
         <a href="#concept" style="text-decoration: none; background: #313C72; color: #FAF8F5; padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 15px;" data-hover="background: #25986A;">Découvrir le concept</a>
-        <a href="#contact" style="text-decoration: none; border: 2px solid #313C72; color: #313C72; padding: 12px 26px; border-radius: 999px; font-weight: 700; font-size: 15px;" data-hover="background: #313C72; color: #FAF8F5;">Me contacter</a>
+        <a href="#contact" onclick="gtag_report_conversion(); return true;" style="text-decoration: none; border: 2px solid #313C72; color: #313C72; padding: 12px 26px; border-radius: 999px; font-weight: 700; font-size: 15px;" data-hover="background: #313C72; color: #FAF8F5;">Me contacter</a>
       </div>
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #25986A; letter-spacing: 0.08em; margin-top: 4px;">Friends — Forage — Freedom</div>
       <div style="display: flex; gap: 28px; flex-wrap: wrap; margin-top: 10px; border-top: 1px solid #E8E2DA; padding-top: 18px;">
@@ -611,11 +635,11 @@ html { scroll-behavior: smooth; }
       <h2 style="font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: clamp(26px, 3vw, 36px); margin: 12px 0 16px;">Parlons de votre cheval</h2>
       <p style="max-width: 56ch; margin: 0 auto 36px; font-size: 17px; color: #E3E0EF; text-wrap: pretty;">Une question sur le concept, une visite du chantier, une future place en pension ? Contactez-moi par téléphone ou email.</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: center;">
-        <a href="tel:+33682734125" style="text-decoration: none; background: rgba(250, 248, 245, 0.06); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 26px 20px; color: #FAF8F5; display: flex; flex-direction: column; gap: 6px;" data-hover="border-color: #7BC9A4;">
+        <a href="tel:+33682734125" onclick="return gtag_report_conversion('tel:+33682734125')" style="text-decoration: none; background: rgba(250, 248, 245, 0.06); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 26px 20px; color: #FAF8F5; display: flex; flex-direction: column; gap: 6px;" data-hover="border-color: #7BC9A4;">
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #7BC9A4; font-weight: 700;">TÉLÉPHONE</span>
           <span style="font-weight: 700; font-size: 17px;">06 82 73 41 25</span>
         </a>
-        <a href="mailto:emma.romeo@ecuriedufrenedana.fr" style="text-decoration: none; background: rgba(250, 248, 245, 0.06); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 26px 20px; color: #FAF8F5; display: flex; flex-direction: column; gap: 6px;" data-hover="border-color: #7BC9A4;">
+        <a href="mailto:emma.romeo@ecuriedufrenedana.fr" onclick="return gtag_report_conversion('mailto:emma.romeo@ecuriedufrenedana.fr')" style="text-decoration: none; background: rgba(250, 248, 245, 0.06); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 26px 20px; color: #FAF8F5; display: flex; flex-direction: column; gap: 6px;" data-hover="border-color: #7BC9A4;">
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #7BC9A4; font-weight: 700;">EMAIL</span>
           <span style="font-weight: 700; font-size: 17px; overflow-wrap: anywhere; word-break: break-word;">emma.romeo@ecuriedufrenedana.fr</span>
         </a>
